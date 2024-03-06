@@ -4,6 +4,8 @@
             <ul class="flex">
                 <li class="p-2"><NuxtLink to="/">Home</NuxtLink></li>
                 <li class="p-2"><NuxtLink to="/about">About</NuxtLink></li>
+                <li class="p-2"><NuxtLink to="/test">Test</NuxtLink></li>
+                <li class="p-2"><NuxtLink to="/weather">Weather</NuxtLink></li>
             </ul>
         </nav>
     </header>
