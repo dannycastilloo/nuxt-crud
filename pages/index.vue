@@ -38,7 +38,9 @@
                         <td class="py-4 px-6 border-b border-grey-light">{{ item.salary }}</td>
                         <td class="py-4 px-6 border-b border-grey-light">{{ item.date }}</td>
                         <td class="py-4 px-6 border-b border-grey-light">
-                            a
+                            <nuxt-link class="text-blue-500 pr-4" :to="`/view?id=${item.id}`">View</nuxt-link>
+                            <nuxt-link class="text-blue-500 pr-4" :to="`/edit?id=${item.id}`">Edit</nuxt-link>
+                            <button class="text-red-500 pr-4" @click="deleteItem(item.id)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
@@ -62,6 +64,10 @@
                 if (localStorage.getItem('items')) {
                     this.items = JSON.parse(localStorage.getItem('items'));
                 }
+            },
+            deleteItem(id) {
+                this.items = this.items.filter(item => item.id !== id);
+                localStorage.setItem('items', JSON.stringify(this.items));
             }
         }
     }
